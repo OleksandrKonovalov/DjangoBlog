@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block content %}
+    <div class="card my-3 mx-5 border border-dark">
+      <img draggable="false" class="card-img img-fluid" src="{{ post.banner.url }}"/>
+      <div class="card-img-overlay" style="pointer-events: none">
+          <div class="mt-5 mx-auto text-center text-white">
+              <h1 style="text-shadow: black 3px 3px 3px;">{{ post.title }}</h1>
+              <h6 style="text-shadow: black 3px 3px 3px;">{{ post.author }} @ {{ post.created }}</h6>
+          </div>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ post.body }}</p>
+        {% include "blog/tags.html" %}
+      </div>
+    </div>
+{% endblock %}
+
+
